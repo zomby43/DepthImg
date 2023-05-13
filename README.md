@@ -27,7 +27,7 @@ Installation
 
 Usage
 
-    Edit the depth_map_generator.py file and replace the path in the last line of the script with the path to your input image:
+    Edit the depthimg.py file and replace the path in the last line of the script with the path to your input image:
 
     python
 
