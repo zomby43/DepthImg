@@ -1,4 +1,4 @@
-Depth Map Generator
+✨ Depth Map Generator
 
 This Python script uses the MiDaS model from Intel ISL to generate a depth map from a 2D image.
 Requirements
