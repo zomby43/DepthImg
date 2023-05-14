@@ -50,7 +50,3 @@ Troubleshooting
     If you get an error like ValueError: No file found at "add path to image here (e.g. C:\images\image.jpg)", make sure the path to your image is correct and the image file exists at that location.
 
     If you get an error like RuntimeError: The size of tensor a (20) must match the size of tensor b (19) at non-singleton dimension 2, make sure the width and height of your image are both divisible by 32.
-
-License
-
-This project is licensed under the terms of the MIT license.
