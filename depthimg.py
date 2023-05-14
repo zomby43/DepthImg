@@ -8,14 +8,15 @@ def load_model():
     model.eval()
     return model
 
+
 def predict_depth(model, img_path):
     # Check if the image path is valid
     if not os.path.isfile(img_path):
-        raise ValueError(f"⚠️ No file found at {img_path}")
+        raise ValueError(f"No file found at {img_path}")
 
     img = cv2.imread(img_path)
     if img is None:
-        raise ValueError(f"⚠️ The file at {img_path} could not be read as an image")
+        raise ValueError(f"The file at {img_path} could not be read as an image")
 
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
@@ -42,15 +43,18 @@ def predict_depth(model, img_path):
     # normalize the prediction to 0-255 and convert to uint8
     prediction = cv2.normalize(prediction, None, 0, 255, cv2.NORM_MINMAX, dtype=cv2.CV_8U)
 
-    # save the depth map
-    output_path = '../../AppData/Roaming/JetBrains/PyCharm2023.1/scratches/depth_map.png'
+    # save the depth map with same base name as input image but different extension
+    base_name = os.path.basename(img_path)
+    name_without_extension = os.path.splitext(base_name)[0]
+    output_path = os.path.join(os.getcwd(), f"{name_without_extension}_depth_map.png")
     cv2.imwrite(output_path, prediction)
 
     print(f"✨ Depth map image has been saved at {os.path.abspath(output_path)}")
 
     return prediction
 
+
 # Add your image path here:
 
 model = load_model()
-depth_map = predict_depth(model, r"add path to image here (e.g. C:\images\image.jpg)")
+depth_map = predict_depth(model, r"C:\Users\psych\Desktop\glitch\back.png")
