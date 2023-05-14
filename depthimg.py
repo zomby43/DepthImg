@@ -57,4 +57,4 @@ def predict_depth(model, img_path):
 # Add your image path here:
 
 model = load_model()
-depth_map = predict_depth(model, r"C:\Users\psych\Desktop\glitch\back.png")
+depth_map = predict_depth(model, r"Add your image path here (e.g. C:\Users\user\Desktop\image.jpg)")
